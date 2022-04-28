@@ -1,9 +1,13 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
 public class Song {
 
-    public void printSong() {
-
+    public void printSong() throws FileNotFoundException {
+        System.setOut(new PrintStream(new File("sangtekst.txt")));
         for (int day = 1; day <= 12; day++) {
+
             System.out.print("On the ");
             System.out.print(day);
 
@@ -36,7 +40,7 @@ public class Song {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Song song = new Song();
         song.printSong();
     }
